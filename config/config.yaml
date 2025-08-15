@@ -1,0 +1,48 @@
+# Конфигурация Bot Platform
+
+# Основные настройки
+app:
+  name: "Bot Platform"
+  version: "1.0.0"
+  debug: true
+  host: "0.0.0.0"
+  port: 8000
+
+# База данных
+database:
+  url: "postgresql://user:password@localhost/botplatform"
+  echo: false
+
+# Redis для кэширования
+redis:
+  host: "localhost"
+  port: 6379
+  db: 0
+
+# Telegram Bot
+telegram:
+  token: "${TELEGRAM_BOT_TOKEN}"
+  webhook_url: "${WEBHOOK_URL}"
+  allowed_updates: ["message", "callback_query"]
+
+# Discord Bot
+discord:
+  token: "${DISCORD_BOT_TOKEN}"
+  intents: ["guilds", "guild_messages", "direct_messages"]
+
+# VK Bot
+vk:
+  token: "${VK_BOT_TOKEN}"
+  group_id: "${VK_GROUP_ID}"
+
+# Веб-интерфейс
+web:
+  secret_key: "${SECRET_KEY}"
+  session_timeout: 3600
+  max_file_size: 10485760  # 10MB
+
+# Логирование
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/bot_platform.log"
